@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Install rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install cargo-binutils
+rustup component add llvm-tools-preview
+cargo install cargo-binutils --vers 0.3.3
+
+# install pre-reqs for cargo-embed
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-installer.sh | sh
+
+
